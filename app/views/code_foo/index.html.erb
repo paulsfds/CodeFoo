@@ -1,0 +1,29 @@
+<div id="container">
+  <div class="box large">
+    <span>01. Me</span>
+    <%= image_tag "me.jpg" %>
+  </div>
+  <div class="box medium">
+    <span>02. Blog</span>
+    <%= image_tag "blog.png" %>
+  </div>
+  <div class="box small">
+    <span>03. github</span>
+    <%= link_to "https://github.com/paulsfds" %>
+  </div>
+  <div class="box medium">
+    <span>04. Twitter</span>
+  </div>
+  <div class="box medium">
+    <span>04. Twitter</span>
+    <%= form_tag '/', :remote => true do %>
+        <%= label_tag :population, 'Enter population: ' %>
+        <%= text_field_tag :population %>
+        <%= submit_tag "Submit" %>
+    <% end %>
+
+    <div id="answer">
+
+    </div>
+  </div>
+</div>

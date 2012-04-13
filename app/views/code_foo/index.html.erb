@@ -1,29 +1,98 @@
 <div id="container">
-  <div class="box large">
-    <span>01. Me</span>
-    <%= image_tag "me.jpg" %>
-  </div>
-  <div class="box medium">
-    <span>02. Blog</span>
-    <%= image_tag "blog.png" %>
-  </div>
-  <div class="box small">
-    <span>03. github</span>
-    <%= link_to "https://github.com/paulsfds" %>
-  </div>
-  <div class="box medium">
-    <span>04. Twitter</span>
-  </div>
-  <div class="box medium">
-    <span>04. Twitter</span>
-    <%= form_tag '/', :remote => true do %>
-        <%= label_tag :population, 'Enter population: ' %>
-        <%= text_field_tag :population %>
-        <%= submit_tag "Submit" %>
-    <% end %>
-
-    <div id="answer">
-
+  <div id="header">
+    <div id="logo">
+        <%= image_tag "vg_icon.png" %>
     </div>
+    <div id="navigation">
+      <ul>
+        <li>
+          <strong>about me <em>more about me</em></strong>
+        </li>
+        <li>
+          <strong>resume <em>cool stuff i've done</em></strong>
+        </li>
+        <li>
+          <strong>contact <em>more about me</em></strong>
+        </li>
+      </ul>
+    </div>
+    <br class="clear">
+  </div>
+
+  <div id="middle">
+    <div class="box">
+      <div class="left">
+        <h2>01. Me</h2>
+
+        <p>
+          Test content plbalhbalksjdfffffffffffffffffffffffffffffffffffffff
+        </p>
+      </div>
+
+      <div class="right">
+        <%= image_tag "me.jpg" %>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="left">
+        <h2>02. Why would you use a Liquid Layout?</h2>
+
+        <p>
+          When designing a website for a large audience, you need to consider all the different permutations of your
+          website’s user experience. Each visitor could have a different screen resolution, browser, and operating
+          system. Depending on those variables, one user may be having a different experience compared to another user.
+        </p>
+
+        <p>
+          One solution to this problem is to use a fixed width website layout. This helps ensure, although does not
+          guarantee, that every user will be seeing the same website. Since the width is the same in every browser, all
+          the elements in your website will stay the same no matter how big the browser window is. However, if the user
+          has a larger screen resolution, there will be an excessive amount of white space surrounding your layout,
+          which may not be desirable. Additionally, if the user has a smaller screen resolution, the browser may force
+          the user to use a horizontal scroll bar to view your website.
+        </p>
+
+        <p>
+          A liquid layout attempts to dynamically enhance the user experience by adjusting to the user’s settings.
+          Liquid layouts also address some of the issues that fixed width layouts have such as excessive white space,
+          and forcing the use of horizontal scrollbars. Since your layout automatically adjusts to the browser size,
+          your website is future proof in case a higher resolution becomes more popular later. However, creating a
+          liquid layout is generally more difficult than a fixed layout because you have to figure out how to extend
+          your website both horizontally and vertically. But if you have the means to do so, and if it will increase the
+          usability of your site, you should opt to use a liquid layout because you are able to fully take advantage of
+          the fact that web browsers are dynamic and not static. Users should be able to experience the website you are
+          trying to present to them, and they should not be limited by their screen resolution or browser.
+        </p>
+      </div>
+
+      <div class="right">
+        <%= image_tag "me.jpg" %>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="left">
+        <h2>03. License Plate Problem</h2>
+
+        <%= form_tag '/', :remote => true do %>
+            <%= label_tag :population, 'Enter population: ' %>
+            <%= text_field_tag :population %>
+            <%= submit_tag "Submit" %>
+        <% end %>
+
+        <div id="answer">
+
+        </div>
+      </div>
+
+      <div class="right">
+        <%= image_tag "me.jpg" %>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+
   </div>
 </div>

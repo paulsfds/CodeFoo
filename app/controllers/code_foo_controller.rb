@@ -4,6 +4,7 @@ class CodeFooController < ApplicationController
   MAX_LETTER_PERMUTATIONS = 26
   DIGITS = "digits"
   LETTERS = "letters"
+  MIN_POPULATION = 0
   MIN_WIDTH = 1024
 
   def index
@@ -27,6 +28,12 @@ class CodeFooController < ApplicationController
         :total_plates => nil,
         :excess_plates => nil
     }
+
+    if population <= MIN_POPULATION
+      answer[:pattern] = "Error, the population must be greater than zero."
+      answer[:total_plates] = "N/A"
+      answer[:excess_plates] = "N/A"
+    end
 
     # start with 1 letter and 1 digit
     num_of_letters = 1

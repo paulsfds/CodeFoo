@@ -20,9 +20,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'mongrel', '>= 1.2.0.pre2'
+gem 'thin'
 gem 'therubyracer'
-gem 'pry'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

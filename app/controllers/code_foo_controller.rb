@@ -33,6 +33,7 @@ class CodeFooController < ApplicationController
       answer[:pattern] = "Error, the population must be greater than zero."
       answer[:total_plates] = "N/A"
       answer[:excess_plates] = "N/A"
+      return answer
     end
 
     # start with 1 letter and 1 digit

@@ -1,0 +1,51 @@
+$(function () {
+    $(window).resize(function () {
+        resizeHeightOfLeftDivs();
+        moveHeaders();
+    });
+
+    // this is sort've a hack because calling resizeLayout() when the DOM finishes loading does not correctly resize
+    // the left elements. therefore we resize all the elements first, then trigger the resize method on each element
+    // to refresh the UI so that the elements are properly resized.
+    var resizedElements = resizeHeightOfLeftDivs();
+    for (var i = 0; i < resizedElements.length; i++) {
+        resizedElements[i].trigger("resize");
+    }
+});
+
+/*
+ Resizes the height of the left divs to match the height of the right divs so that the text from the right divs does
+ not overflow underneath the left div (since it's floating).
+ */
+function resizeHeightOfLeftDivs() {
+    var leftElements = $(".box > .left");
+    var rightElements = $(".box > .right");
+    var resizedElements = new Array();
+
+    for (var i = 0; i < rightElements.length; i++) {
+        var rightHeight = rightElements.eq(i).height();
+        resizedElements.push(leftElements.eq(i).height(rightHeight));
+    }
+
+    return resizedElements;
+}
+
+/*
+ Moves the h1 headers in the .left divs inside of the .right divs when the browser window width is <= 1024. otherwise
+ the h1 headers are located in the .left divs.
+ */
+function moveHeaders() {
+    if ($(window).width() <= <%= CodeFooController::MIN_WIDTH %>) {
+        var headerElements = $(".box > .left > h1");
+        var rightElements = $(".box > .right");
+        for (var i = 0; i < headerElements.length; i++) {
+            rightElements.eq(i).prepend(headerElements.eq(i));
+        }
+    } else {
+        var headerElements = $(".box > .right > h1");
+        var leftElements = $(".box > .left");
+        for (var i = 0; i < headerElements.length; i++) {
+            leftElements.eq(i).prepend(headerElements.eq(i));
+        }
+    }
+}

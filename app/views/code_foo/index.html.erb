@@ -1,18 +1,23 @@
 <div id="container">
   <div id="header">
     <div id="logo">
-        <%= image_tag "vg_icon.png" %>
+      <%= image_tag "vg_icon.png" %>
     </div>
+    <h1>Paul Wong</h1>
+
     <div id="navigation">
       <ul>
         <li>
-          <strong>about me <em>more about me</em></strong>
+          <a href="#"><strong>about me <em>more about me</em><%= image_tag "me.jpg", :class => "nav_images" %>
+          </strong></a>
         </li>
         <li>
-          <strong>resume <em>cool stuff i've done</em></strong>
+          <a href="http://paul-wong-jr.blogspot.com/"><strong>my blog
+            <em>me talking about software stuff</em><%= image_tag "blog.png", :class => "nav_images" %></strong></a>
         </li>
         <li>
-          <strong>contact <em>more about me</em></strong>
+          <a href="mailto:paulsfds@gmail.com"><strong>contact
+            <em>send me a message</em><%= image_tag "gmail.png", :class => "nav_images" %></strong></a>
         </li>
       </ul>
     </div>
@@ -22,21 +27,76 @@
   <div id="middle">
     <div class="box">
       <div class="left">
-        <h2>01. Me</h2>
+        <h1>01. How many ping pong balls would it take to fill an average-sized school bus? Describe each step in your
+          thought process.</h1>
+      </div>
+      <div class="right">
+        <p>
+          First I would need to find out how big an average-sized school bus is. Searching on Google, I found that a
+          regulation bus is about 480” in length, between 113” to 132” in height, and 102” wide. For simplicity sake,
+          let’s say the average school bus has the dimensions 480” length x 120” height x 8’ 6” wide. The easiest way to
+          estimate this is try and make the school bus into a long rectangle. In the front of the bus is the engine and
+          hood, which is a strange shape. Let’s assume that we won’t be putting any ping pong balls under the hood, so
+          we can just chop it off and then we won’t need to include that in our calculations. By looking a picture of a
+          school bus (http://www.tirebalancingbeads.com/product_images/uploaded_images/school-bus2.jpg), it looks like
+          the width of front part of the bus (where the hood and engine are located) is about the width of the tire plus
+          a little bit (to include the front bumper). Well how big are bus tires? According to Google, they’re about 42”
+          tall. Let’s also assume that school busses use four tires of the same size because that is pretty standard on
+          most regular cars. By looking at the same picture of a school bus, it looks like the front bumper of the bus
+          (the extra part) is about half the tire size. So we can subtract 42” + 21” = 63” from the total length of the
+          bus, which gives us a bus length of 480”’ - 63” = 417”.
+        </p>
 
         <p>
-          Test content plbalhbalksjdfffffffffffffffffffffffffffffffffffffff
+          Now the school bus isn’t really 120” tall because the tires make it taller than it really is. By looking at
+          the
+          picture, it looks like the tires lift the bus up about half of the tire’s height. So we can subtract half of
+          the
+          tires height from the bus’ height, which gives us 120” - 21” = 99”. The school bus is mostly uniformly wide,
+          so
+          we can still use our initial estimate of 102” wide. So now we have a bus volume of 417” * 99” * 102” = 4210866
+          cubic inches.
+        </p>
+
+        <p>
+          Inside of the bus, there are seats that take up space that we need to account for. According to Google, it
+          says
+          that there are about 25 seats (including the driver seat) inside an averaged sized school bus. I also found a
+          link that says a typical school bus seat is 39” in length. I was unable to find the height of the back of the
+          seat. Let’s assume school busses are mostly used for middle schoolers. The average height of a middle schooler
+          is 5’ 5”, so the height of the back seat needs to be atleast half of that, so we can round up and use a number
+          like 3’. The width of those seats don’t look that big in pictures, and I want to estimate less than half a
+          foot,
+          so let’s go with 4”. Therefore the back of a school bus seat is 39” x 4” x 36” = 5616 cubic inches. The bottom
+          part of the seat (the part you actually sit on) has the same length, but the width is going to be a little
+          bigger because you want more cushion to sit on, so let’s estimate 5”. The height will not be as big, and I
+          estimate about 24”. So the bottom part of the seat is 39” x 5” x 24” = 5616 cubic inches. The total volume of
+          the seats in the bus is 25 * (5616” + 4680”) = 257400 cubic inches. So let’s subtract the volume of the seats
+          from the volume of the bus which gives us 4210866” - 257400” = 3953466 cubic inches.
+        </p>
+
+        <p>
+          How big is a ping pong ball? Well according to Google it is 2.045 cubic inches. If we divide the volume of the
+          bus by the volume of a ping pong ball, we get 3953466 / 2.045 = 1933235 ping pong balls can fit in an average
+          school bus. However, that number is an overestimate because it’d be impossible to use up all the space in the
+          bus. When ping pong balls stack, there are gaps in between them, and that results in wasted space. So we can
+          try
+          to calculate a more accurate estimation by taking into account the space inbetween the ping pong balls. We can
+          do that by assuming each ping pong ball takes up as much space as if it were shaped like a cube. The diameter
+          of
+          a ping pong ball is about 1.57 inches, so if it were shaped like a cube its volume would be 1.57^3 = 3.87
+          cubic
+          inches. Therefore, we could fit about 3953466 / 3.87 = 1021567 ping pong balls in an average sized school bus.
         </p>
       </div>
-
-      <div class="right">
-        <%= image_tag "me.jpg" %>
-      </div>
+      <br class="clear">
     </div>
 
     <div class="box">
       <div class="left">
-        <h2>02. Why would you use a Liquid Layout?</h2>
+        <h1>02. Explain why you would use a liquid layout.</h1>
+      </div>
+      <div class="right">
 
         <p>
           When designing a website for a large audience, you need to consider all the different permutations of your
@@ -46,34 +106,39 @@
 
         <p>
           One solution to this problem is to use a fixed width website layout. This helps ensure, although does not
-          guarantee, that every user will be seeing the same website. Since the width is the same in every browser, all
-          the elements in your website will stay the same no matter how big the browser window is. However, if the user
-          has a larger screen resolution, there will be an excessive amount of white space surrounding your layout,
-          which may not be desirable. Additionally, if the user has a smaller screen resolution, the browser may force
-          the user to use a horizontal scroll bar to view your website.
+          guarantee, that every user will be seeing the same website. Since the width is fixed in every browser, all the
+          elements in your website will stay the same no matter how big the browser window is. However, if the user has
+          a larger screen resolution, there will be an excessive amount of white space surrounding your layout, which
+          may not be desirable. Additionally, if the user has a smaller screen resolution, the browser may force the
+          user to use a horizontal scroll bar to view your website.
         </p>
 
         <p>
-          A liquid layout attempts to dynamically enhance the user experience by adjusting to the user’s settings.
-          Liquid layouts also address some of the issues that fixed width layouts have such as excessive white space,
-          and forcing the use of horizontal scrollbars. Since your layout automatically adjusts to the browser size,
-          your website is future proof in case a higher resolution becomes more popular later. However, creating a
-          liquid layout is generally more difficult than a fixed layout because you have to figure out how to extend
-          your website both horizontally and vertically. But if you have the means to do so, and if it will increase the
-          usability of your site, you should opt to use a liquid layout because you are able to fully take advantage of
-          the fact that web browsers are dynamic and not static. Users should be able to experience the website you are
-          trying to present to them, and they should not be limited by their screen resolution or browser.
+          A liquid layout attempts to dynamically enhance the user experience by adjusting to the user’s screen and
+          browser settings. Liquid layouts also address some of the issues that fixed width layouts have such as
+          excessive white space, and forcing the use of horizontal scrollbars. Since your layout automatically adjusts
+          to the browser size, your website is future proof in case a higher or lower resolution becomes more popular
+          later. However, creating a liquid layout is generally more difficult than a fixed layout because you have to
+          figure out how to extend your website both horizontally and vertically. But if you have the means to do so,
+          and if it will increase the usability of your site, you should opt to use a liquid layout because you are able
+          to fully take advantage of the fact that web browsers are dynamic and not static. Users should be able to
+          experience the website you are trying to present to them, and they should not be limited by their screen
+          resolution or browser. Liquid layouts allow developers to create full width layouts without having to worry
+          about the user’s screen and browser resolutions. This ultimately enhances the user experience and requires
+          less maintenance in the future than a fixed width layout.
         </p>
       </div>
 
-      <div class="right">
-        <%= image_tag "me.jpg" %>
-      </div>
+      <br class="clear">
     </div>
 
     <div class="box">
       <div class="left">
-        <h2>03. License Plate Problem</h2>
+        <h1>
+          03. License Plate Problem
+        </h1>
+      </div>
+      <div class="right">
 
         <%= form_tag '/', :remote => true do %>
             <%= label_tag :population, 'Enter population: ' %>
@@ -86,13 +151,11 @@
         </div>
       </div>
 
-      <div class="right">
-        <%= image_tag "me.jpg" %>
-      </div>
+      <br class="clear">
     </div>
   </div>
 
   <div id="footer">
-
+    <h1>Copyright &copy; 2012 Paul Wong</h1>
   </div>
 </div>

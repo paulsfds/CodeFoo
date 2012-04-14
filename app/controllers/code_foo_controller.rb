@@ -1,10 +1,14 @@
 class CodeFooController < ApplicationController
+  # constants
   MAX_DIGIT_PERMUTATIONS = 10
   MAX_LETTER_PERMUTATIONS = 26
   DIGITS = "digits"
   LETTERS = "letters"
+  MIN_WIDTH = 1024
 
   def index
+    # only calculate the license plates if the popluation parameter was passed in. this should only happen when making
+    # an AJAX request on the index page
     population = params[:population].to_i
     if population
       @answer = generate_license_plates(population)
@@ -51,12 +55,15 @@ class CodeFooController < ApplicationController
     # third see if we can compute an even lower population using a combination of digits and letters. first try more
     # digits than letters because it will result in a lower population than more letters than digits. in other words
     # try num_of_digits > num_of_letters, then increase num_of_letters until num_of_letters > num_of_digits.
-    (num_of_digits-2).downto(1).each do |i|
-      (1..(num_of_digits-2)).each do |j|
-        if MAX_DIGIT_PERMUTATIONS**i*MAX_LETTER_PERMUTATIONS**j >= population
-          if answer[:total_plates] > MAX_DIGIT_PERMUTATIONS**i*MAX_LETTER_PERMUTATIONS**j
-            answer[:total_plates] = MAX_DIGIT_PERMUTATIONS**i*MAX_LETTER_PERMUTATIONS**j
-            answer[:pattern] = generate_pattern(i, DIGITS) + ", " + generate_pattern(j, LETTERS)
+    max_num_of_digits = num_of_digits - 2
+    min_num_of_digits = 1
+
+    max_num_of_digits.downto(min_num_of_digits).each do |n_digits|
+      (min_num_of_digits..max_num_of_digits).each do |m_letters|
+        if MAX_DIGIT_PERMUTATIONS**n_digits*MAX_LETTER_PERMUTATIONS**m_letters >= population
+          if answer[:total_plates] > MAX_DIGIT_PERMUTATIONS**n_digits*MAX_LETTER_PERMUTATIONS**m_letters
+            answer[:total_plates] = MAX_DIGIT_PERMUTATIONS**n_digits*MAX_LETTER_PERMUTATIONS**m_letters
+            answer[:pattern] = generate_pattern(n_digits, DIGITS) + ", " + generate_pattern(m_letters, LETTERS)
           end
         end
       end

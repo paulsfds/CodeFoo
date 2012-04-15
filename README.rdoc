@@ -1,4 +1,4 @@
-== IGN Code Foo 2012 - Paul Wong - paulsfds@gmail.com
+== IGN Code Foo 2012 - Paul Wong - paulsfds at gmail dot com
 
 Hi, this is my application for IGN Code Foo 2012.
 

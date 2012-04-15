@@ -8,7 +8,13 @@ They can also be found here:
 
 1. In the root directly of this repository there is a file named ProblemsOneAndTwo.docx that contains my answer to problem 1 link:https://github.com/paulsfds/CodeFoo/blob/master/ProblemsOneAndTwo.docx.
 
-2. In the root directly of this repository there is a file named ProblemsOneAndTwo.docx that contains my answer to problem 2 link:https://github.com/paulsfds/CodeFoo/blob/master/ProblemsOneAndTwo.docx. I also created a liquid layout that can be found here link:http://codefoo.herokuapp.com/. The javascript code can be found here link:https://github.com/paulsfds/CodeFoo/blob/master/app/assets/javascripts/code_foo.js.erb. The css code can be found here link:https://github.com/paulsfds/CodeFoo/blob/master/app/assets/stylesheets/code_foo.css.scss.erb. Finally the HTML code can be found here link:https://github.com/paulsfds/CodeFoo/blob/master/app/views/code_foo/index.html.erb.
+2. I created a liquid layout that can be found here link:http://codefoo.herokuapp.com/. Also, in the root directly of this repository there is a file named ProblemsOneAndTwo.docx that contains my answer to problem 2 link:https://github.com/paulsfds/CodeFoo/blob/master/ProblemsOneAndTwo.docx.  
+
+    The JavaScript code can be found here https://github.com/paulsfds/CodeFoo/blob/master/app/assets/javascripts/code_foo.js.erb. 
+
+    The CC code can be found here https://github.com/paulsfds/CodeFoo/blob/master/app/assets/stylesheets/code_foo.css.scss.erb. 
+
+    Finally the HTML code can be found here https://github.com/paulsfds/CodeFoo/blob/master/app/views/code_foo/index.html.erb.
 
 3. The code for this problem is located in link:https://github.com/paulsfds/CodeFoo/blob/master/app/controllers/code_foo_controller.rb in the method called generate_license_plates(population). You can also test the code at link:http://codefoo.herokuapp.com/.
 

@@ -1,2 +1,3 @@
+// update the #answer div with the problem_three partial when the AJAX call is made
 $('#answer').html('<%= escape_javascript(render :partial => 'problem_three', :locals => { :answer => @answer }) %>');
 $('#answer').trigger("resize");

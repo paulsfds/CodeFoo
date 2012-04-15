@@ -120,13 +120,15 @@ a:link, a:visited {
   color: black;
 }
 
+// CSS for when the browser width becomes the 1280px
 @media screen and (max-width:1280px) {
   #navigation, #header h1 {
     float: none;
   }
 }
 
-@media screen and (max-width:<%= CodeFooController::MIN_WIDTH%>px) {
+// CSS for when the browser width becomes the CodeFooController::MIN_WIDTH
+@media screen and (max-width:<%= CodeFooController::MIN_WIDTH %>px) {
   #header {
     text-align: center;
   }

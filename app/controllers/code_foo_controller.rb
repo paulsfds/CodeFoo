@@ -21,6 +21,17 @@ class CodeFooController < ApplicationController
     end
   end
 
+  private
+
+  # You own a license plate manufacturing company. Write a program that takes a population and determines the simplest
+  # pattern that will produce enough unique plates. Since all the plates that match the pattern will be generated, find
+  # the pattern that produces the least excess plates. Use a combination of letters (A-Z) and numbers (0-9).
+  #
+  # This method finds the pattern that produces the least excess plates by first trying to generate plates by using all
+  # digits. Then it tries all letters, and lastly it tries a combination of digits and letters. During this process
+  # the lowest amount of plates that meet the population is stored. The method returns a hash that contains the answer
+  # to this problem, which includes the initial population, the pattern needed to produce the least excess plates, the
+  # total number of plates generated, and the number of excess plates that will be generated.
   def generate_license_plates(population)
     answer = {
         :population => population,

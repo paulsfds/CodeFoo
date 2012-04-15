@@ -1,4 +1,8 @@
+/*
+ This method is run after the DOM loads.
+ */
 $(function () {
+    // this is called every time the browser window is resized
     $(window).resize(function () {
         resizeHeightOfLeftDivs();
         moveHeaders();
